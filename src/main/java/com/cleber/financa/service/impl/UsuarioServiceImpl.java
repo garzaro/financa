@@ -37,8 +37,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	@Override
 	public Usuario persistirUsuarioNabaseDeDados(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+		/*deve validar o email, se nao existir, persiste, (service)*/
+		validarEmailNaBaseDedados(usuario.getEmail());
+		
+		return usuarioRepository.save(usuario);
 	}
 
 	@Override
