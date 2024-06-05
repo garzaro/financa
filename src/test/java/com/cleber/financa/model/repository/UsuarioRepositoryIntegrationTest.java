@@ -57,7 +57,6 @@ public class UsuarioRepositoryIntegrationTest {
 	
 	@Test
 	public void testDeveRecuperarUmaInstanciaDeUsuarioPeloId() {
-		
 		/*cenario, retornar um usuario cadastrado pelo id*/
 		Usuario criarUmaInstanciaDeUsuarioERecuperarPeloId = Usuario.builder()
 				.nomeCompleto("Cleber Garzaro")
@@ -67,9 +66,7 @@ public class UsuarioRepositoryIntegrationTest {
 				.dataCadastro(LocalDate.now())
 				.build();
 		testEntityManager.persist(criarUmaInstanciaDeUsuarioERecuperarPeloId);
-		
 		/*verificação*/
-		
 		Usuario recuperarAInstanciaCriada = usuarioRepository
 				.findById(criarUmaInstanciaDeUsuarioERecuperarPeloId.getId())
 				.orElseThrow();
