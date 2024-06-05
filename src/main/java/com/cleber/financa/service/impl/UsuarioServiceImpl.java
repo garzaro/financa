@@ -29,17 +29,15 @@ public class UsuarioServiceImpl implements UsuarioService{
 			throw new ErroDeValidacacao("O email não foi encontrado");
 		}
 		if(!validandoLogin.get().getSenha().equals(senha)) {
-			
 		}
 		return validandoLogin.get();
 	}
 	
-
 	@Override
 	public Usuario persistirUsuarioNabaseDeDados(Usuario usuario) {
 		/*deve validar o email, se nao existir, persiste, (service)*/
 		validarEmailNaBaseDedados(usuario.getEmail());
-		
+		/*se nao existir, salva a instancia*/
 		return usuarioRepository.save(usuario);
 	}
 
