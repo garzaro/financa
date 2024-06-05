@@ -16,7 +16,7 @@ import com.cleber.financa.model.entity.Usuario;
 //@DataJpaTest
 //@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 //@ActiveProfiles("test")
-public class UsuarioRepositoryTest {
+public class UsuarioRepositoryIntegrationTest {
 	
 	/*Inicio teste com Dougllas Sousa (Udemy)*/
 	
