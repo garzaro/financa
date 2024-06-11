@@ -1,6 +1,7 @@
 package com.cleber.financa.model.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
@@ -44,6 +45,10 @@ public class Usuario {
 	@Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
 	@Column(name = "data_cadastro")
 	private LocalDate dataCadastro;
+	
+	@Builder.Default
+	@Column(name = "data_criacao", updatable = false) /*m, h, ss, m*/
+	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
 	/*getters and setters*/
 	/*hashcode and equals*/
