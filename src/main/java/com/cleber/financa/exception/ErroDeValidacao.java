@@ -1,10 +1,10 @@
 package com.cleber.financa.exception;
 
-public class ErroDeValidacacao extends RuntimeException {
+public class ErroDeValidacao extends RuntimeException {
 	
 	private static final long serialVersionUID = 1L;
 
-	public ErroDeValidacacao(String messageErrorValidacao) {
+	public ErroDeValidacao(String messageErrorValidacao) {
 		super(messageErrorValidacao);
 		
 	}
