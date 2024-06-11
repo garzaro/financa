@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.cleber.financa.exception.ErroDeValidacacao;
+import com.cleber.financa.exception.ErroDeValidacao;
 import com.cleber.financa.exception.RegraDeNegocioException;
 import com.cleber.financa.model.entity.Usuario;
 import com.cleber.financa.model.repository.UsuarioRepository;
@@ -21,14 +21,15 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public Usuario validarLogin(String email, String senha) {
-		/*login*/
+	public Usuario autenticarUsuario(String email, String senha) {
+		/*login*/ /**/
 		Optional<Usuario> validandoLogin = usuarioRepository.findByEmail(email);
 		/*verificar a existencia de usuario na base de dados*/
 		if(!validandoLogin.isPresent()) {
-			throw new ErroDeValidacacao("O email não foi encontrado");
+			throw new ErroDeValidacao("Usuário não encontrado pelo email informado");
 		}
 		if(!validandoLogin.get().getSenha().equals(senha)) {
+			throw new ErroDeValidacao("Senha inválida");
 		}
 		return validandoLogin.get();
 	}
